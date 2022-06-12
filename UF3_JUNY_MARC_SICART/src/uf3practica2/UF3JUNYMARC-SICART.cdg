@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="UF3Practica2">
+  <ClassDiagramComponents>
+    <Class name="Aula" package="" visibility="public" xPosition="578.0" yPosition="237.0">
+      <Fields>
+        <Field name="nom" type="String" visibility="private"/>
+        <Field name="capacitat" type="int" visibility="private"/>
+        <Field name="ordinadors" type="int" visibility="private"/>
+        <Field name="alumnes" type="List&lt;Persona&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Profesor" package="" visibility="public" xPosition="308.0" yPosition="199.0">
+      <Fields>
+        <Field name="tipus" type="String" visibility="private"/>
+        <Field name="carrec" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Alumne" package="" visibility="public" xPosition="837.0" yPosition="199.0">
+      <Fields>
+        <Field name="dataNaixement" type="String" visibility="private"/>
+        <Field name="codi" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Institut" package="" visibility="public" xPosition="578.0" yPosition="457.0">
+      <Fields>
+        <Field name="aules" type="List&lt;Aula&gt;" visibility="private"/>
+        <Field name="nom" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Persona" package="" visibility="public" isAbstract="true" xPosition="578.0" yPosition="23.0">
+      <Fields>
+        <Field name="nom" type="String" visibility="private"/>
+        <Field name="cognom1" type="String" visibility="private"/>
+        <Field name="cognom2" type="String" visibility="private"/>
+        <Field name="email" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Alumne" target="Persona"/>
+    <HasRelation name="te" source="Institut" target="Aula" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <IsRelation name="is" source="Profesor" target="Persona"/>
+    <HasRelation name="te" source="Aula" target="Profesor" type="Composition" sourceCardinality="0..1" targetCardinality="0..1"/>
+    <HasRelation name="te" source="Aula" target="Alumne" type="Composition" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
